@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap");
+
+html {
+	font-family: "Kelly Slab", cursive, sans-serif;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Kelly Slab", cursive, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+	min-width: 450px;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.pageContainer {
+	margin: 1rem;
+	padding: 2rem;
+	transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 550px) {
+	.pageContainer {
+		padding: 1rem;
+	}
+}

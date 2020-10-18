@@ -1,0 +1,132 @@
+.quiz-head {
+	display: flex;
+	justify-content: space-between;
+}
+.ham-wrap.show {
+	display: none;
+}
+.ham-wrap.hide {
+	display: none;
+}
+.quiz-name {
+	text-transform: uppercase;
+	font-size: x-large;
+}
+.quiz-container {
+	display: grid;
+	grid-template-columns: 30% 70%;
+	gap: 1rem;
+	margin: 1rem;
+	padding: 0.5rem;
+}
+.questions-list-container {
+	border-right: 1px solid #e6e6e6;
+	max-height: 450px;
+	overflow: auto;
+}
+.questions-list-container,
+.question {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+.question-container {
+	display: flex;
+	padding: 1.5rem;
+	cursor: pointer;
+}
+
+.question-container.selected {
+	border-left: 3px solid #f50057;
+	background-color: rgba(245, 0, 87, 0.07);
+}
+.question-container > div {
+	margin: 1rem 0.5rem;
+}
+.question-detail {
+	padding: 1rem;
+	margin-bottom: 3rem;
+	border-radius: 4px;
+	border: 1px solid #424242;
+}
+.question-options {
+	margin-bottom: 1rem;
+}
+.question-actions {
+	display: flex;
+	justify-content: space-between;
+}
+.answer {
+	padding: 0.7rem 0 0.7rem 1.3rem;
+	border: 0.5px solid rgb(134 134 134 / 87%);
+	border-radius: 3px;
+	margin-bottom: 0.6rem;
+	cursor: pointer;
+}
+.answer.selected {
+	border: 2px solid rgb(10 184 20 / 87%);
+}
+
+.answer:hover {
+	background-color: #e6e6e6;
+}
+
+.questions-list-container::-webkit-scrollbar-track {
+	background-color: #fff;
+}
+
+.questions-list-container::-webkit-scrollbar {
+	width: 2px;
+	background-color: #d0d0d0;
+}
+
+.questions-list-container::-webkit-scrollbar-thumb {
+	background-color: #d0d0d0;
+}
+
+.questions-list-container.tuck-in {
+	transform: translateX(0px);
+}
+
+.quiz-container,
+.questions-list-container {
+	transition: all 0.3s ease-in-out;
+}
+.disable-container {
+	pointer-events: none;
+	filter: blur(1px);
+}
+
+@media screen and (max-width: 920px) {
+	.quiz-container {
+		margin: 0;
+		grid-template-columns: 35% 65%;
+	}
+	.questions-list-container {
+		padding: 0.5rem;
+	}
+}
+@media screen and (max-width: 840px) {
+	.quiz-name {
+		display: flex;
+	}
+	.ham-wrap.show {
+		display: block;
+	}
+	.quiz-container {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 0;
+		z-index: 1;
+	}
+	.questions-list-container {
+		position: absolute;
+		height: -webkit-fill-available;
+		transform: translateX(-400px);
+		padding: 1rem;
+		z-index: 5;
+		width: 300px;
+		background-color: #f9f9f9;
+		border-radius: 3px;
+		filter: drop-shadow(4px 2px 9px #cdcdcd);
+	}
+}

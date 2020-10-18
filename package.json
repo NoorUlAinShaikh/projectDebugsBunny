@@ -1,0 +1,24 @@
+{
+  "name": "projectdebugsbunny",
+  "version": "1.0.0",
+  "description": "Express server to host request coming to json server and delegate to client side routing",
+  "main": "index.js",
+  "engines": {
+    "node": "14.5.0",
+    "npm": "6.14.5"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "client": "npm run start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "NoorUlAin Shaikh",
+  "license": "ISC",
+  "dependencies": {
+    "@date-io/moment": "^1.3.13",
+    "@material-ui/pickers": "^3.2.10",
+    "express": "^4.17.1",
+    "json-server": "^0.16.2",
+    "material-ui-pickers": "^2.2.4"
+  }
+}

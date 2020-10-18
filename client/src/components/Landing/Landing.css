@@ -1,0 +1,53 @@
+.landing {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	height: 80vh;
+	margin-top: 1rem;
+	padding: 1rem;
+}
+
+.admin-side,
+.user-side {
+	display: grid;
+	place-content: center;
+	cursor: pointer;
+	font-size: xx-large;
+	color: #fff;
+	margin: 2rem;
+	border-radius: 1rem;
+	transition: all 0.2s ease-in-out;
+}
+.admin-side {
+	background-color: #e91e63;
+}
+.user-side {
+	background-color: #ba68c8;
+}
+
+.admin-side:hover > h2,
+.user-side:hover > h2 {
+	backdrop-filter: blur(1px);
+	letter-spacing: 1rem;
+}
+.admin-side h2,
+.user-side h2 {
+	letter-spacing: 2px;
+	transition: all 0.2s ease-in-out;
+}
+
+.user-side:hover {
+	filter: drop-shadow(-2px 4px 6px #424242);
+	transform: scale(1.1);
+	transition: all 0.2s ease-in-out;
+}
+.admin-side:hover {
+	filter: drop-shadow(2px 4px 6px #424242);
+	transform: scale(1.1);
+	transition: all 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 900px) {
+	.landing {
+		height: 50vh;
+	}
+}

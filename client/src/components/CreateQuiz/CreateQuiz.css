@@ -1,0 +1,92 @@
+.create-quiz-wrap {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.main-form.inactive {
+	filter: blur(2px);
+	pointer-events: none;
+}
+.main-form.active {
+	filter: none;
+	pointer-events: all;
+}
+.stepper-actions-wrap > button {
+	margin-top: 2rem;
+	margin-right: 2rem;
+}
+.quiz-duration-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+.start-date,
+.end-date {
+	margin: 1rem !important;
+}
+.MuiTypography-body2,
+.MuiButton-root {
+	font-family: Kelly Slab !important;
+}
+
+.options-form,
+.answer-details {
+	display: flex;
+	flex-direction: column;
+}
+.answer-details {
+	margin: 0 0 1rem;
+}
+.options-form {
+	margin-top: 2rem;
+}
+.questions-header,
+.options-header {
+	margin-bottom: 1rem;
+	font-size: large;
+	letter-spacing: 1px;
+}
+.questions-form-actions {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+}
+.add-option {
+	justify-self: flex-end;
+}
+.marginTopBottom1rem {
+	margin: 1rem 0;
+}
+
+.option.correct {
+	border: 1.5px solid green;
+}
+.option {
+	padding: 0.5rem;
+	border: 0.5px solid rgb(134 134 134 / 87%);
+	border-radius: 3px;
+	margin-bottom: 0.6rem;
+}
+
+.create-quiz-wrap,
+.main-form {
+	transition: all 0.1s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+	.create-quiz-wrap {
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	}
+	.main-form {
+		position: absolute;
+		z-index: 1;
+	}
+	.questions-form {
+		z-index: 10;
+	}
+	.main-form.inactive {
+		transform: translateX(-500px);
+	}
+	.main-form.active {
+		transform: translateX(0px);
+	}
+}
